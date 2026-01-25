@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Blog | Law Offices of RRK, LLC</title>
+    <meta name="description" content="Legal insights and updates from Law Offices of RRK, LLC - Austin, Texas">
+
+    <style>
+
+:root {
+    --bg-charcoal: #2d2b2a;
+    --card-slate-top: #5a5d60;
+    --card-slate-bottom: #4f5254;
+    --border-ink: #1b1b1a;
+    --text-silver: #e8e8e8;
+    --text-muted: #a1a2a2;
+    --btn-fill: #bdbdbd;
+    --btn-text: #111111;
+    --icon-silver: #c7c7c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-charcoal);
+    color: var(--text-silver);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('rrk-logo-dark.jpg') center/cover no-repeat;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--border-ink);
+}
+
+.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--text-silver);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: var(--text-muted);
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: linear-gradient(180deg, rgba(90,93,96,0.3) 0%, rgba(79,82,84,0.3) 100%);
+    border: 1px solid var(--border-ink);
+    border-radius: 8px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.95em;
+}
+
+.article-content {
+    background: linear-gradient(180deg, rgba(90,93,96,0.15) 0%, rgba(79,82,84,0.15) 100%);
+    border: 1px solid var(--border-ink);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.article-content h2 {
+    color: var(--text-silver);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.article-content h3 {
+    color: var(--text-silver);
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-size: 1.4em;
+}
+
+.article-content h4 {
+    color: var(--text-silver);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.article-content p {
+    margin-bottom: 15px;
+    color: var(--text-silver);
+    line-height: 1.8;
+}
+
+.article-content ul, .article-content ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.article-content li {
+    margin-bottom: 8px;
+    color: var(--text-silver);
+}
+
+.article-content a {
+    color: var(--btn-fill);
+    text-decoration: none;
+    border-bottom: 1px solid var(--btn-fill);
+}
+
+.article-content a:hover {
+    color: var(--text-silver);
+    border-bottom-color: var(--text-silver);
+}
+
+.article-content strong {
+    color: var(--text-silver);
+    font-weight: 600;
+}
+
+.article-content em {
+    font-style: italic;
+}
+
+.back-button {
+    display: inline-block;
+    background: var(--btn-fill);
+    color: var(--btn-text);
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.back-button:hover {
+    background: transparent;
+    color: var(--btn-fill);
+    border-color: var(--btn-fill);
+}
+
+.blog-card {
+    background: linear-gradient(180deg, var(--card-slate-top) 0%, var(--card-slate-bottom) 100%);
+    border: 1px solid var(--border-ink);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.blog-card h3 {
+    color: var(--text-silver);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.blog-card .date {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 2px solid var(--border-ink);
+    margin-top: 60px;
+    color: var(--text-muted);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="rrk-logo-dark.jpg" alt="Law Offices of RRK, LLC" class="logo">
+            <h1>Legal Blog</h1>
+            <p class="subtitle">Expert legal insights from Austin's trusted law firm</p>
+            <p class="subtitle" style="margin-top: 5px; font-size: 0.95em;">98 Articles</p>
+        </header>
+
+
+        <section style="margin-bottom: 50px;">
+            <h2 style="color: var(--text-silver); margin-bottom: 20px; font-size: 1.8em; border-bottom: 2px solid var(--border-ink); padding-bottom: 10px;">
+                General Legal (98 articles)
+            </h2>
+            <div style="display: grid; gap: 15px;">
+
+                <a href="a-firm-you-can-count-on-in-austin-and-round-rock-rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="assessing-assault-charges-in-texas-what-you-need-to-know.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="attorney-for-state-jail-felony-crimes-7C-the-law-office-of-rrk.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-assault-lawyer-7C-criminal-defense-travis-county.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-car-accident-lawyer-7C-car-crash-attorney-near-you---rrk.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-car-accident-lawyer-7C-rrk-law-firm.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-car-accident-lawyer---rrk.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-car-accident-lawyer---rrk-law-update.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-car-accident-updates---latest-accident-in-austin-news.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-criminal-defense-lawyers-7C-your-case-rightfully-defended.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-dwi-attorney---rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-dwi-attorneys---1-goal-is-a-dismissal---payment-plans.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-dwi-lawyer-7C-experienced-criminal-defense-attorney.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-dwi-lawyer---rrk-law-firm.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-dwi-lawyer-updated-for-06132024---rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-motorcycle-accident-lawyer.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-personal-injury-lawyer-7C-no-fee-unless-you-win.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-texas-dwi-lawyer.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-truck-accident-lawyer-7C-rrk-law-firm-7C-512-436-2779.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austin-trucking-accident-attorneys-top-legal-advice-by-rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="austins-premier-dwi-and-criminal-defense-firm-rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="best-austin-child-custody-lawyers-law-firms---texas-7C-rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="best-austin-divorce-lawyers---rrk-law---512-436-2779.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="best-child-custody-lawyers-in-austin-texas.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="best-personal-injury-attorney-austin-tx.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="boating-and-car-accident-attorney.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="can-a-biological-parent-regain-custody-after-adoption.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="car-accident-attorney-in-austin-assisting-injury-victims.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="car-accident-lawyer-near-me.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="cause-of-falls-on-construction-sites---rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="charged-with-a-1st-offense-dwi-in-texas-what-you-need-to-know.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="comprehensive-legal-support-in-austin-georgetown-round-rock-cp.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="contributory-vs-comparative-negligence.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="criminal-law-in-texas-insights-from-rrk-law---dwi-assault-pocs.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="dedicated-austin-truck-accident-lawyers---statewide-available.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="do-i-need-an-austin-family-attorney-1.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="dwi-defense-attorney-7C-dismissal-of-your-dwi-charge-austin-tx.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="essential-guide-to-choosing-a-car-accident-attorney-in-austin.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="expunction-lawyer-in-austin-texas.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="facing-dwi-charges-in-austin-be-in-the-know.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="find-an-experienced-assault-lawyer-near-me-in-austin-tx.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="find-an-experienced-austin-car-accident-lawyer-in-2023.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="find-an-experienced-divorce-lawyer-in-austin-tx.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="find-the-best-austin-car-accident-lawyer-for-your-case---rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="find-the-best-construction-accident-attorneys-in-austin-tx.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="finding-the-right-dwi-lawyer-in-austin-tx.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="get-expert-austin-dwi-lawyer-assistance-7C-9825-success-rate.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="get-the-latest-trucking-news-to-stay-ahead-of-the-curve.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="grandparent-rights-how-to-protect-your-grandchildren---rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="grandparents-custody-rights-in-texas---rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="grandparents-rights-in-texas-understanding-the-laws-and-process.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="how-can-a-dwi-affect-your-car-insurance-in-texas.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="is-there-a-dwi-lawyer-near-me---austin-texas.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="law-offices-near-me-best-attorneys-near-you-by-area-of-focus.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="legal-guidance-austin-your-path-to-justice-with-rrk-law-office.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="modifying-child-custody-in-texas-a-brief-overview.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-a-custody-battle-in-texas-7C-guide-and-tips.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-car-wreck-and-personal-injury-claims-in-austin-tx.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-divorce-and-custody-with-austins-top-attorneys.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-divorce-smoothly-your-top-choice-for-a-divorce-lawyer.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-dwi-in-texas-expert-guidance-for-legal-challenges.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-joint-custody-with-an-austin-divorce-attorney.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-legal-challenges-with-rrk-law-trusted-austin-partner.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-the-aftermath-of-truck-accidents-in-austin-and-across.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-the-legal-limit-for-alcohol-in-texas-know-your-limits.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-the-travis-county-jail-system-what-to-expect-from.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="navigating-your-first-time-dwi-essential-guide-for-texas-drivers.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="personal-injury-claims-a-guide---top-round-rock-texas-attorney.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="protect-yourself-from-predatory-mortgage-servicing-in-2023.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="removing-your-mugshot-from-the-internet-a-guide-by-rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="rrk-law-trusted-partner---divorce-dwi-car-accidents.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="rrk-law-your-legal-partner---austin---criminal-family-pi-cases.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="savvy-lawyer-dwi-defense-strategies---guide-to-fighting-charges.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="texas-truck-accident-lawyers---rrk-law-firm.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="the-future-of-legal-services-embracing-ai-in-a-com-world.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="the-impact-of-illinois-bipa-on-privacy-and-business-compliance.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="the-legal-consequences-of-driving-while-intoxicated-dwi-in-texa.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="the-ultimate-guide-to-finding-an-austin-assault-lawyer.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="top-divorce-lawyers-in-williamson-county-tx-7C-findlaw.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="top-dwi-lawyer-austin-effective-defense-strategies-for-your-case.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="top-dwi-lawyer-austin-effective-defense-strategies-for-your-case-1.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="top-slip-and-fall-accident-attorney-7C-legal-help-now.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="types-of-assault---overview---rrk-law.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="understanding-divorce-in-texas-your-questions-answered.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="understanding-dwi-in-texas-your-questions-answered.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="understanding-legal-challenges-from-mistrials-to-personal-injury.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="understanding-the-illinois-biometric-information-privacy-act.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="understanding-the-illinois-biometric-information-privacy-act-1.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="understanding-types-of-assault-charges-your-legal-standpoints.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="understanding-your-rights-after-a-personal-injury-from-a-commerc.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="unraveling-the-complexity-of-texas-assault-charges-in-texas---rrk.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="various-types-of-assault-charges-in-texas.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="ways-to-lose-custody-in-texas---rrk-law-office.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="what-are-my-rights-if-i-have-been-in-a-bicycle-accident-in-texas.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="what-are-the-drug-penalty-groups-in-texas.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="what-is-a-dwi-explaining-differences-between-dui-and-dwi-charges.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="what-to-do-after-a-car-accident-in-austin-texas-2025.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+                <a href="your-comprehensive-legal-partner-in-texas-law-offices-of-rrk.html" class="blog-card">
+                    <h3>RRK Law Blog</h3>
+                    <p class="date">Published: January 25, 2026</p>
+                </a>
+
+            </div>
+        </section>
+
+
+        <footer>
+            <p><strong>Law Offices of RRK, LLC</strong></p>
+            <p>512-436-2779 | Austin, Texas</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Professional Legal Services in Austin, Texas
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
